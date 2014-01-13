@@ -1,9 +1,12 @@
 .reap/digest
 .yardoc
-doc
-log
-pkg
-tmp
+doc/
+log/
+pkg/
+tmp/
 man/*.5
 man/*.html
-web
+web/
+*.gem
+Gemfile.lock
+
