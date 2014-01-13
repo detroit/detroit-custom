@@ -5,7 +5,7 @@ module Detroit
   # This is a useful alternative to writing a full-blown plugin
   # when the need is simple.
   #
-  class CustomTool < Tool
+  class Custom < Tool
 
     # Default group(s) in which this plugin operates.
     #DEFAULT_TRACK = "main"
@@ -21,16 +21,12 @@ module Detroit
     # Plural alias for #group.
     #alias_accessor :groups, :group
 
-  private
-
     SPECIAL_OPTIONS = %w{
       tool class track active priority project 
       trial trace verbose force quiet
     }
 
     # Instantiate new custom plugin.
-    #
-    # FIXME: Custom#initialize seems to be running twice at startup. Why?
     #
     # This works by interpreting the service configuration as a hash of
     # stop names to ruby code.
@@ -55,13 +51,15 @@ module Detroit
 
     #
     def assemble(stop, info={})
-      @scripts[stop].call
+      instance_eval(@scripts[stop])
     end
 
+  private
+
     # Set initial attribute defaults.
-    def initialize_defaults
-      #@group = [DEFAULT_GROUP]
-    end
+    #def initialize_defaults
+    #  #@group = [DEFAULT_GROUP]
+    #end
 
     #
     def method_missing(s, *a, &b)
@@ -97,10 +95,13 @@ module Detroit
       false
     end
 
-    def inspect
-      "#<Custom @group=#{group.join(',')}>"
-    end
+    #def inspect
+    #  "#<Custom>"
+    #end
 
   end
+
+  # The CustomTool does not belong to a specific assembly.
+  register_tool(Custom)
 
 end
