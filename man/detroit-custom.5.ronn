@@ -1,0 +1,82 @@
+detroit-custom(5) - custom tool plugin for detroit
+==================================================
+
+## DESCRIPTION
+
+The Custom tool plugin for Detroit allows any procedure to be run
+at any point in the assembly.
+
+
+## OPTIONS
+
+Custom tool options are the same as the stations of the assembly used.
+This is usually the *standard assembly*. In that case the following
+stations apply:
+
+  * `prepare` -  prepare services / ensure service requirements
+
+  * `generate` - code generation
+
+	* `compile` - compile source code
+
+	* `test` - run tests and specifications
+
+	* `analyze` - perform code analysis
+
+	* `document` - generate documentation
+
+	* `package` - create packages
+
+	* `install` - install the package locally (if need be)
+
+	* `verify` - post package verification / integration tests
+
+	* `publish` - publish website/documentation
+
+	* `release` - release packages
+
+	* `deploy` -  deploy system to servers
+
+	* `promote` - tell the world about your awesome work
+
+  * `reset` - mark all by products as out-of-date
+
+  * `clean` - remove temporary by products
+
+  * `purge` - remove all by products
+
+Any of these stations can also be prefixed by `pre-` or `post` to
+help prioritize their execution.
+
+
+## EXAMPLES
+
+The typical assembly file entry will be something like:
+
+    hello:
+      tool: custom
+      document:
+        puts "Hello world!"
+
+
+## RESOURCES
+
+For more information:
+
+  * [API Reference](http://rubydoc.info/gems/detroit-custom)
+
+  * [Development Site](http://github.com/detroit/detroit-custom)
+
+  * [Detroit Project](http://detroit.github.com)
+
+
+## COPYRIGHT
+
+Copyright (c) 2011 Rubyworks
+
+Detroit LOCat is distributable in accordance with the GPL v3.0 license.
+
+
+## SEE ALSO
+
+detroit(1)

@@ -1,0 +1,40 @@
+---
+gem:
+  active: true
+
+yard:
+  active   : true
+  readme   : [ "README.md" ]
+  topfiles : [ "*.md", "*.txt" ]
+  files    : [ lib ]
+  exclude  : [ lib/detroit.yml ]
+  output   : doc
+  extra    : ~
+  priority : 1
+
+dnote:
+  title: Source Notes
+  output: log/notes.md
+
+github:
+  folder: web
+
+ronn:
+  active: true
+
+locat:
+  active: false
+
+qedoc:
+  active: false
+  files : demo/
+  title : Detroit Custom
+  output: DEMO.md
+
+announce:
+  tool: email
+  mailto: 
+    - ruby-talk@ruby-lang.org
+    - rubyworks-mailinglist@googlegroups.com
+    - transfire@gmail.com
+

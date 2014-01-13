@@ -1,0 +1,5 @@
+#!mast .ruby bin lib man qed test [A-Z]*.*
+lib/detroit-custom.rb
+README.md
+HISTORY.md
+LICENSE.txt

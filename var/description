@@ -1,0 +1,2 @@
+Custom tool plugin for Detroit build system. Allows any procedure
+to be run at any point in the assembly.
