@@ -1,4 +1,6 @@
-#!mast .ruby bin lib man qed test [A-Z]*.*
+#!mast .index .yardopts bin demo lib man test spec *.md *.txt
+.index
+.yardopts
 lib/detroit-custom.rb
 man/detroit-custom.5
 man/detroit-custom.5.html
