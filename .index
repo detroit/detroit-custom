@@ -41,5 +41,5 @@ description: |-
   Custom tool plugin for Detroit build system. Allows any procedure
   to be run at any point in the assembly.
 suite: detroit
-version: 0.1.0
-date: '2014-01-13'
+version: 0.1.1
+date: '2014-01-15'
